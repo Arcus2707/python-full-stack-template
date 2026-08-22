@@ -1,0 +1,32 @@
+# Development overrides: hot reload, source volume mounts and debug settings.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+services:
+  web:
+    build:
+      dockerfile: docker/Dockerfile.dev
+    environment:
+      APP_ENV: development
+      APP_DEBUG: "true"
+    volumes:
+      - ../src:/app/src
+      - ../alembic:/app/alembic
+      - ../alembic.ini:/app/alembic.ini
+      - ../templates:/app/templates
+      - ../logging.ini:/app/logging.ini
+    command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+  worker:
+    build:
+      dockerfile: docker/Dockerfile.dev
+    environment:
+      APP_ENV: development
+    volumes:
+      - ../src:/app/src
+
+  beat:
+    build:
+      dockerfile: docker/Dockerfile.dev
+    environment:
+      APP_ENV: development
+    volumes:
+      - ../src:/app/src

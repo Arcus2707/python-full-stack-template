@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ app_name }}</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{ app_name }}</h1>
+    </header>
+    <main>
+      <p>{{ message }}</p>
+      <p>Rendered at {{ now() | datetimeformat }}.</p>
+    </main>
+    <footer>
+      <small>&copy; {{ now().year }} {{ app_name }}</small>
+    </footer>
+  </body>
+</html>

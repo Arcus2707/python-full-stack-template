@@ -1,0 +1,26 @@
+# syntax=docker/dockerfile:1
+
+# ----------------------------------------------------------------------------
+# Development image with the full dev toolchain and hot-reload support.
+# ----------------------------------------------------------------------------
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
+
+ENV UV_COMPILE_BYTECODE=0 \
+    UV_LINK_MODE=copy \
+    PYTHONUNBUFFERED=1 \
+    PATH="/app/.venv/bin:$PATH" \
+    APP_ENV=development
+
+WORKDIR /app
+
+COPY pyproject.toml uv.lock* README.md ./
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --extra dev --no-install-project || true
+
+# Source is mounted as a volume in docker-compose.dev.yml for hot reload.
+COPY . .
+RUN --mount=type=cache,target=/root/.cache/uv uv sync --extra dev
+
+EXPOSE 8000
+
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

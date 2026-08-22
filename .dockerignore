@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+
+# Dev tooling
+.vscode/
+.idea/
+docs/
+tests/
+node_modules/
+
+# Env
+.env
+.env.*
+!.env.example

@@ -1,0 +1,10 @@
+.venv/
+venv/
+dist/
+build/
+htmlcov/
+node_modules/
+uv.lock
+*.egg-info/
+migrations/versions/
+docs/dev/schema.mermaid
