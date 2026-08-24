@@ -12,6 +12,8 @@ how to work with it.
 - [Tasks](tasks.md) — Celery workers and beat scheduling
 - [Docker](docker.md) — images, local stack and registry publishing
 - [Dependencies & Testing](dependencies-testing.md) — uv and pytest via Make
+- [Build Log](build-log.md) — history of how this backend was built, including
+  errors encountered and how they were resolved
 
 ## Quick start
 
