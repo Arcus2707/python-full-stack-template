@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=77", "setuptools-scm>=8"]
+requires = ["setuptools>=84.2.1", "setuptools-scm>=10.3.4"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -18,30 +18,30 @@ classifiers = [
 ]
 dynamic = ["version"]
 dependencies = [
-    "fastapi>=0.115",
-    "uvicorn[standard]>=0.34",
-    "pydantic>=2.10",
-    "pydantic-settings>=2.7",
-    "sqlalchemy[asyncio]>=2.0",
-    "alembic>=1.14",
-    "asyncpg>=0.30",
-    "celery[redis]>=5.4",
-    "aiocache[redis]>=0.12",
-    "redis>=5.2",
+    "fastapi>=0.162.0",
+    "uvicorn[standard]>=0.54.0",
+    "pydantic>=2.14.2",
+    "pydantic-settings>=2.16.2",
+    "sqlalchemy[asyncio]>=2.1.8",
+    "alembic>=1.20.1",
+    "asyncpg>=0.32.0",
+    "celery[redis]>=5.6.3",
+    "aiocache[redis]>=0.12.3",
+    "redis>=8.1.0",
     "jinja2>=3.1",
-    "python-multipart>=0.0.20",
-    "pyjwt>=2.10",
+    "python-multipart>=0.0.33",
+    "pyjwt>=2.15.1",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.9",
-    "mypy>=1.14",
-    "pre-commit>=4.0",
-    "pytest>=8.3",
-    "pytest-asyncio>=0.25",
+    "ruff>=0.17.3",
+    "mypy>=2.4.1",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
     "pytest-cov>=6.0",
-    "coverage[toml]>=7.6",
+    "coverage[toml]>=7.17.1",
     "httpx>=0.28",
     "asgi-lifespan>=2.1",
     "aiosqlite>=0.20",
